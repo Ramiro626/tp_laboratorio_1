@@ -4,6 +4,7 @@
  *  Created on: 10 abr. 2022
  *      Author: Painwheel
  */
+//declaracion de funciones
 void ingresarKilometros();
 void ingresarPreciosDeVuelos();
 int calcular();

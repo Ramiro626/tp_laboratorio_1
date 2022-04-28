@@ -50,7 +50,7 @@ int main(void) { //funcion principal
 				opcionMenuSeleccionada = 6;
 			}
 			break;
-		case 5:
+		case 5: //Carga forzada
 			asignarKilometros(7090);
 			asignarAerolineasPrecioTotalVuelo(162965);
 			asignarLatamPrecioTotalVuelo(159339);

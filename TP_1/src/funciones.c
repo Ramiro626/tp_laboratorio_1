@@ -4,6 +4,7 @@
 
 #include "funciones.h"
 
+//declaracion de variables y funciones.
 int kilometros;
 int calculado;
 
@@ -45,7 +46,7 @@ float obtenerDiferenciaPrecio() {
 	return diferenciaPrecio;
 }
 
-void ingresarKilometros() {
+void ingresarKilometros() { //Ingreso de kilometros y verificacion
 	calculado = 0;
 	int valido;
 	do {
@@ -58,7 +59,7 @@ void ingresarKilometros() {
 	} while (valido == 0 || kilometros <= 0);
 }
 
-void ingresarPreciosDeVuelos() {
+void ingresarPreciosDeVuelos() { //Ingreso de vuelos y verificacion
 	calculado = 0;
 	int valido;
 	do {
@@ -80,15 +81,15 @@ void ingresarPreciosDeVuelos() {
 	} while (valido == 0 || latamPrecioTotalVuelo <= 0);
 }
 
-float calcularTarjeta(float precioTotalVuelo, float ratio) {
+float calcularTarjeta(float precioTotalVuelo, float ratio) { //calculo tarjetas
 	return precioTotalVuelo + precioTotalVuelo * ratio / 100;
 }
 
-float dividir(float dividendo, float divisor) {
+float dividir(float dividendo, float divisor) { //calculo division (BTC y Precio unitario)
 	return dividendo / divisor;
 }
 
-float calcularDiferencia(float precioTotalAerolineas, float precioTotalLatam) {
+float calcularDiferencia(float precioTotalAerolineas, float precioTotalLatam) { //calculo diferencia precio
 	float resultado = precioTotalAerolineas - precioTotalLatam;
 
 	if (resultado < 0) {
@@ -98,7 +99,7 @@ float calcularDiferencia(float precioTotalAerolineas, float precioTotalLatam) {
 	return resultado;
 }
 
-int calcular() {
+int calcular() { //+verificaciones y llamadas de funciones para calculos
 	if (kilometros == 0) {
 		printf("ERROR! Faltan ingresar los kilometros del vuelo\n");
 	} else if (aerolineasPrecioTotalVuelo == 0) {
@@ -125,7 +126,7 @@ int calcular() {
 	return calculado;
 }
 
-int mostrarResultados() {
+int mostrarResultados() { //funcion de mostrar prinf y verificacion.
 	if (calculado == 0) {
 		printf("ERROR! Falta calcular los precios\n");
 		return 0;
@@ -148,17 +149,17 @@ int mostrarResultados() {
 	return 1;
 }
 
-void asignarKilometros(int valor) {
+void asignarKilometros(int valor) { //llamado de valor kilometros forzado
 	calculado = 0;
 	kilometros = valor;
 }
 
-void asignarAerolineasPrecioTotalVuelo(float valor) {
+void asignarAerolineasPrecioTotalVuelo(float valor) { //llamado de valor aerolineas forzado
 	calculado = 0;
 	aerolineasPrecioTotalVuelo = valor;
 }
 
-void asignarLatamPrecioTotalVuelo(float valor) {
+void asignarLatamPrecioTotalVuelo(float valor) { //lamado de valor latam forzado.
 	calculado = 0;
 	latamPrecioTotalVuelo = valor;
 }
